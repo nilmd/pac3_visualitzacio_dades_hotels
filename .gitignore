@@ -1,0 +1,26 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vim
+
+# Build outputs (if any)
+dist/
+build/
+
+# Dependencies (if using Node.js in future)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Local environment
+.env
+.env.local

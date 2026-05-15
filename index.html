@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Booked, But Not Coming — Storytelling</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <main id="story">
+      <section class="panel cover">
+        <div class="container two-col">
+          <div class="left">
+            <h1>Reserves que no arriben</h1>
+            <p class="lede">
+              Quan una reserva no es converteix en una estada, què ens diu sobre el comportament dels clients?
+            </p>
+            <nav class="story-index" aria-label="Índex de seccions">
+              <a href="#section-1" class="story-index-item">
+                <span>01</span>
+                <strong>Problema</strong>
+              </a>
+              <a href="#section-2" class="story-index-item">
+                <span>02</span>
+                <strong>Impacte</strong>
+              </a>
+              <a href="#section-3" class="story-index-item">
+                <span>03</span>
+                <strong>Temps</strong>
+              </a>
+              <a href="#section-4" class="story-index-item">
+                <span>04</span>
+                <strong>Compromís</strong>
+              </a>
+            </nav>
+          </div>
+          
+      </section>
+
+      <section class="panel" id="section-1">
+        <div class="container section-frame">
+          <div class="big-num">01</div>
+          <div class="section-header">
+            <div class="index">01 / 04</div>
+            <h3 class="section-title">La magnitud del problema</h3>
+          </div>
+          <div class="main-grid">
+            <div class="left-col">
+              <div class="chart" id="chart-donut"></div>
+              <div class="chart-title">
+                Cancel·lacions i reserves completades
+              </div>
+              <div class="chart-caption" id="caption-donut">
+                Mostra la proporció total de reserves cancel·lades respecte a
+                les que es van completar.
+              </div>
+            </div>
+            <aside class="right-col">
+              <div class="insight">
+                Per als hotels, les cancel·lacions no són interrupcions
+                ocasionals: són un repte estructural.
+              </div>
+              <div class="section-context side-context">
+                <h4>Un de cada tres no arriba</h4>
+                <p>
+                  Aproximadament el 37% de totes les reserves són cancel·lades.
+                </p>
+              </div>
+              <div class="action-small">
+                Acció: entendre patrons de cancel·lació per protegir ingressos.
+              </div>
+            </aside>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="panel" id="section-2">
+        <div class="container section-frame">
+          <div class="big-num">02</div>
+          <div class="section-header">
+            <div class="index">02 / 04</div>
+            <h3 class="section-title">On impacta més</h3>
+          </div>
+          <div class="main-grid">
+            <div class="left-col">
+              <div class="chart" id="chart-bar-type"></div>
+              <div class="chart-title">Cancel·lació per tipus d'hotel</div>
+              <div class="chart-caption" id="caption-bar-type">
+                Percentatge de cancel·lació calculat sobre el total de reserves
+                de cada tipus d'hotel.
+              </div>
+            </div>
+            <aside class="right-col">
+              <div class="insight">
+                Les reserves urbanes estan subjectes a canvis de plans i viatges
+                de negoci.
+              </div>
+              <div class="section-context side-context">
+                <h4>Els hotels de ciutat són més volàtils</h4>
+                <p>
+                  Els hotels urbans mostren taxes de cancel·lació més altes que
+                  els resorts.
+                </p>
+              </div>
+              <div class="action-small">
+                Acció: estratègies de previsió específiques per tipus d'hotel.
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="section-3">
+        <div class="container section-frame">
+          <div class="big-num">03</div>
+          <div class="section-header">
+            <div class="index">03 / 04</div>
+            <h3 class="section-title">El temps crea incertesa</h3>
+          </div>
+          <div class="main-grid">
+            <div class="left-col">
+              <div class="chart" id="chart-leadtime"></div>
+              <div class="chart-title">
+                Cancel·lació segons horitzó de reserva
+              </div>
+              <div class="chart-caption" id="caption-leadtime">
+                Les reserves s'agrupen en franges de lead time per veure com
+                augmenta el risc amb el temps.
+              </div>
+            </div>
+            <aside class="right-col">
+              <div class="insight">
+                Les reserves anticipades reflecteixen sovint optimisme, no
+                compromís.
+              </div>
+              <div class="section-context side-context">
+                <h4>Com abans reservis, més possibilitat de cancel·lar</h4>
+                <p>
+                  Els terminis llargs de reserva correlacionen amb un major risc
+                  de cancel·lació.
+                </p>
+              </div>
+              <div class="action-small">
+                Acció: considerar dipòsits o polítiques per reserves a llarg
+                termini.
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="section-4">
+        <div class="container section-frame">
+          <div class="big-num">04</div>
+          <div class="section-header">
+            <div class="index">04 / 04</div>
+            <h3 class="section-title">El compromís importa</h3>
+          </div>
+          <div class="main-grid">
+            <div class="left-col">
+              <div class="chart" id="chart-commitment"></div>
+              <div class="chart-title">
+                Cancel·lació segons compromís del client
+              </div>
+              <div class="chart-caption" id="caption-commitment">
+                Es compara la taxa de cancel·lació entre clients repetidors i
+                clients de primera vegada.
+              </div>
+            </div>
+            <aside class="right-col">
+              <div class="insight">
+                La lleialtat i la participació són actius predictius per al
+                negoci.
+              </div>
+              <div class="section-context side-context">
+                <h4>Els clients compromesos són més fiables</h4>
+                <p>
+                  Els clients que mostren senyals de compromís cancel·len molt
+                  menys.
+                </p>
+              </div>
+              <div class="action-small">
+                Acció: mesurar el compromís abans de l'arribada.
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
