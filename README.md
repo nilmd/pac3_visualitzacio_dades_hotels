@@ -63,7 +63,7 @@ python3 -m http.server 8000
 
 ---
 
-## Notes per al professor
+## Notes
 
 - El lloc es carrega completament des del navegador (sense backend)
 - Tots els textos i explicacions estan en **català**
