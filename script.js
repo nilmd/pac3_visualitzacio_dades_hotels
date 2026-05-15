@@ -1,4 +1,3 @@
-// script.js — Carrega dades i crea visualitzacions amb D3 (millorat)
 (function () {
   const dataPath = "hotel_bookings.csv";
   const cssVars = getComputedStyle(document.documentElement);
@@ -102,7 +101,6 @@
       .style("fill", "#666")
       .text("cancel·lacions");
 
-    // legend (aligned vertically below donut)
     const legend = wrapper
       .append("div")
       .attr("class", "legend legend-vertical");
@@ -115,7 +113,6 @@
       item.append("span").text(`${d.key} — ${d.value}`);
     });
 
-    // caption (populate below chart)
     const captionEl = document.getElementById("caption-donut");
     if (captionEl) {
       const canceled = dataset.find((d) => d.key === "Cancel·lades").value;
@@ -177,14 +174,12 @@
           .tickFormat((d) => d + "%"),
       );
 
-    // add bottom axis label (hotel types)
     d3.select("#chart-bar-type")
       .append("div")
       .attr("class", "chart-axis-label-bottom")
       .style("text-align", "center")
       .text("Tipus d'hotel");
 
-    // add left axis label (percentage) - vertical text
     d3.select("#chart-bar-type")
       .append("div")
       .attr("class", "chart-axis-label-left")
@@ -220,7 +215,6 @@
       .attr("y", (d) => y(d.hotel) + y.bandwidth() / 2 + 5)
       .text((d) => `${d.rate.toFixed(1)}%`);
 
-    // caption with additional stats
     const captionBar = document.getElementById("caption-bar-type");
     if (captionBar) {
       const totalAll = d3.sum(arr, (d) => d.total);
@@ -284,14 +278,12 @@
       .style("text-anchor", "middle")
       .attr("dy", "1.1em");
 
-    // add bottom axis label (time buckets)
     d3.select("#chart-leadtime")
       .append("div")
       .attr("class", "chart-axis-label-bottom")
       .style("text-align", "center")
       .text("Franja de temps (dies)");
 
-    // add left axis label (percentage) - vertical text
     d3.select("#chart-leadtime")
       .append("div")
       .attr("class", "chart-axis-label-left")
@@ -335,9 +327,6 @@
       })
       .on("mouseleave", () => tooltip.style("opacity", 0));
 
-    // axis label removed per design: keep chart clean
-
-    // caption
     const captionLead = document.getElementById("caption-leadtime");
     if (captionLead) {
       const totalLead = d3.sum(stats, (d) => d.count);
@@ -386,14 +375,12 @@
       .attr("transform", `translate(0,${height})`)
       .call(d3.axisBottom(x));
 
-    // add bottom axis label (commitment groups)
     d3.select("#chart-commitment")
       .append("div")
       .attr("class", "chart-axis-label-bottom")
       .style("text-align", "center")
       .text("Tipus de client");
 
-    // add left axis label (percentage) - vertical text
     d3.select("#chart-commitment")
       .append("div")
       .attr("class", "chart-axis-label-left")
@@ -436,7 +423,6 @@
       .attr("text-anchor", "middle")
       .text((d) => `${d.rate.toFixed(1)}%`);
 
-    // caption
     const captionCommit = document.getElementById("caption-commitment");
     if (captionCommit) {
       const totalCommit = d3.sum(arr, (d) => d.total);
@@ -449,14 +435,12 @@
   }
 })();
 
-// Keyboard navigation: left/right arrows move between `.panel` sections
 (function () {
   const panels = Array.from(document.querySelectorAll(".panel"));
   if (!panels.length) return;
 
   function getCurrentPanelIndex() {
     const scrollY = window.scrollY || window.pageYOffset;
-    // Find panel whose top is <= scrollY + 10 and is the closest
     let current = 0;
     for (let i = 0; i < panels.length; i++) {
       const elTop = panels[i].offsetTop;
@@ -471,7 +455,6 @@
   }
 
   window.addEventListener("keydown", (e) => {
-    // ignore when typing in inputs or editable elements
     const tag =
       (document.activeElement && document.activeElement.tagName) || "";
     if (

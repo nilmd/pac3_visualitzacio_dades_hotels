@@ -107,7 +107,6 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  /* diagonal gradient: more opaque left-top, more transparent to right-bottom */
   background:
     linear-gradient(
       135deg,
@@ -347,7 +346,7 @@ h2 {
 .chart {
   height: 360px;
   margin-bottom: 0;
-  padding-bottom: 56px; /* reserve space for legends/labels so captions don't overlap */
+  padding-bottom: 56px;
 }
 .chart svg {
   width: 100%;
@@ -364,13 +363,12 @@ h2 {
   color: rgba(11, 19, 43, 0.8);
   font-size: 14px;
   line-height: 1.55;
-  margin-top: 18px; /* more space from chart */
+  margin-top: 18px;
   padding-top: 10px;
   border-top: 1px dashed rgba(11, 79, 158, 0.06);
   text-align: left;
 }
 
-/* ensure left column stacks chart + caption without overlap */
 .left-col {
   display: flex;
   flex-direction: column;
